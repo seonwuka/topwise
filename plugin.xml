@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-topwiseplugin" version="0.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>TopwisePlugin</name>
+    <js-module name="TopwisePlugin" src="www/TopwisePlugin.js">
+        <clobbers target="cordova.plugins.TopwisePlugin" />
+    </js-module>
+    <platform name="android">
+        <framework src="androidx.appcompat:appcompat:1.2.0" />
+        <framework src="androidx.annotation:annotation:1.1.0" />
+         <framework src="com.google.code.gson:gson:2.8.5" />
+          <framework src="com.squareup.okhttp3:okhttp:3.10.0" />
+           <framework src="com.squareup.okio:okio:1.6.0" />
+
+        <framework src="plugin-gradle.gradle" custom="true" type="gradleReference" />
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="TopwisePlugin">
+                <param name="android-package" value="TopwisePlugin" />
+            </feature>
+            <feature name="TopwisePlugin_pay">
+                <param name="android-package" value="com.parkway.topwise"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <activity android:name="com.parkway.topwise.PinpadActivity"></activity>
+        </config-file>
+
+        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+            <application android:name="com.parkway.topwise.MyApplication" />
+
+        </edit-config>
+
+
+        <source-file src="src/android/TopwisePlugin.java" target-dir="src/cordova-plugin-topwiseplugin/TopwisePlugin" />
+        <resource-file src="src/android/libs/topwise-debug.aar" target="libs/topwise-debug.aar" />
+
+        <resource-file src="src/android/assets/aid.xml" target="assets/aid.xml" />
+        <resource-file src="src/android/assets/capk.xml" target="assets/capk.xml" />
+        <resource-file src="src/android/assets/capk_test.xml" target="assets/capk_test.xml" />
+    </platform>
+</plugin>

@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-topwiseplugin",
+  "version": "0.0.1",
+  "description": "Cordova plugin for the T1 POS from Topwise",
+  "cordova": {
+    "id": "cordova-plugin-topwiseplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seonwuka/topwise.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Onwuka Emeka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seonwuka/topwise/issues"
+  },
+  "homepage": "https://github.com/seonwuka/topwise#readme"
+}
